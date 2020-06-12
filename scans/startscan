@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Start scan is a script which will setup your first steps of the pen test
-# It will create a folder with the given name 
-# It will execute nmap and gobuster and store the output in the init file in their folders
+# It will create a directory with the given name 
+# It will execute nmap and gobuster and store the output in the init file in their directories
 
 # Author: Menno Fesevur, 2020
 # TryHackMe Name: zeMenno
@@ -12,13 +12,14 @@ directory_name=''
 force=false
 
 print_usage(){
-	echo 'usage: startscan -i <ip address> -f <directory_name> [-r]'
+	echo 'usage: startscan -i <ip address> -d <directory_name> [-f]'
 	echo ' -i 	The Ip Address of the target machine'
-	echo ' -f 	The folder where all the output will be'
+	echo ' -d 	The directory where all the output will be'
+	echo ' -f 	Force the scans even when the host can not be pinged'
 }
 
 exec_code(){
-	echo "[StartScan] Making folders"
+	echo "[StartScan] Making directories/files"
 
 	mkdir $directory_name
 	mkdir $directory_name/nmap
@@ -29,7 +30,7 @@ exec_code(){
 
 	touch $directory_name/README.md
 	echo '```export IP='$ip_address'```' > $directory_name/README.md
-	echo "[StartScan] Created a README.md in the folder: $directory_name"	
+	echo "[StartScan] Created a README.md in the directory: $directory_name"	
 
 	echo '[StartScan] Running NMAP'
 
