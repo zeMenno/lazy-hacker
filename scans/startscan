@@ -1,0 +1,74 @@
+#!/bin/bash
+
+# Start scan is a script which will setup your first steps of the pen test
+# It will create a folder with the given name 
+# It will execute nmap and gobuster and store the output in the init file in their folders
+
+# Author: Menno Fesevur, 2020
+# TryHackMe Name: zeMenno
+
+ip_address=''
+directory_name=''
+force=false
+
+print_usage(){
+	echo 'usage: startscan -i <ip address> -f <directory_name> [-r]'
+	echo ' -i 	The Ip Address of the target machine'
+	echo ' -f 	The folder where all the output will be'
+}
+
+exec_code(){
+	echo "[StartScan] Making folders"
+
+	mkdir $directory_name
+	mkdir $directory_name/nmap
+	touch $directory_name/nmap/init
+	mkdir $directory_name/gobuster
+	touch $directory_name/gobuster/init
+
+
+	touch $directory_name/README.md
+	echo '```export IP='$ip_address'```' > $directory_name/README.md
+	echo "[StartScan] Created a README.md in the folder: $directory_name"	
+
+	echo '[StartScan] Running NMAP'
+
+	sudo nmap -sS -sV -T4 -A $ip_address -oN $directory_name/nmap/init
+
+	echo '[StartScan] Running GoBuster'
+
+	echo '[StartScan] GoBuster will take a while, start by looking at the nmap output'
+
+	sudo gobuster dir -u http://$ip_address -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt > $directory_name/gobuster/init
+}
+
+while getopts 'hi:d:f' flag; do
+	case "${flag}" in
+		f) force=true ;;
+		i) ip_address="${OPTARG}" ;;
+		d) directory_name="${OPTARG}" ;;
+		h) print_usage
+		   exit 1 ;;
+	esac
+done
+if [[ $ip_address == '' || $directory_name == '' ]]; then
+	echo 'ERROR: Not all parameters are filled'
+	echo 'Try: "startscan -h" for more info'
+	exit 1
+fi
+
+echo "[StartScan] Checking if host is up"
+
+if [[ $force ]]; 
+then
+	exec_code
+else
+	if ping -c 1 $ip_address &> /dev/null 
+	then
+		exec_code
+		exit 1;
+	else
+		echo 'ERROR: Host is not up, do you have the right ip address?'
+		exit 1
+	fi 
+fi
