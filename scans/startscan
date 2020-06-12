@@ -54,7 +54,7 @@ done
 if [[ $ip_address == '' || $directory_name == '' ]]; then
 	echo 'ERROR: Not all parameters are filled'
 	echo 'Try: "startscan -h" for more info'
-	exit 1
+	exit
 fi
 
 echo "[StartScan] Checking if host is up"
@@ -66,9 +66,7 @@ else
 	if ping -c 1 $ip_address &> /dev/null 
 	then
 		exec_code
-		exit 1;
 	else
 		echo 'ERROR: Host is not up, do you have the right ip address?'
-		exit 1
 	fi 
 fi
