@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# Start scan is a script which will setup your first steps of the pen test
-# It will create a directory with the given name 
-# It will execute nmap and gobuster and store the output in the init file in their directories
-
 # Author: Menno Fesevur, 2020
 # TryHackMe Name: zeMenno
 
