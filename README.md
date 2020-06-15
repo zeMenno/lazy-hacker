@@ -25,9 +25,9 @@ Usage:
   startscan [FLAGS] [OPTIONS]
 
 Flags: 
-  -i 		The Ip Address of the target machine
-  -d 		The directory where all the output will be
-  -w 		Add a custom wordlist for GoBuster
+  -i    The Ip Address of the target machine
+  -d    The directory where all the output will be
+  -w    Add a custom wordlist for GoBuster
   -h    Display help information
   -t    Amount of threads GoBuster will use
   -r    All the response codes GoBuster will check (',' seperated)
