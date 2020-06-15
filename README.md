@@ -1,6 +1,6 @@
-# Lazy scans
+# Lazy scripts
 
-Lazy scans are scans for everybody who want  to do more with less commands. Here is an example of a script that will make your start of pentesting faster, easier and more consistent in use. 
+Lazy scripts are scripts for everyone that want to do more with less commands. Here are some examples of a scripts that will make your pentesting faster, easier and more consistent in use. 
 
 ## Scans
 
