@@ -24,7 +24,7 @@ Flags:
   -i 		The Ip Address of the target machine
   -d 		The directory where all the output will be
   -w 		Add a custom wordlist for GoBuster
-  -h    This will display the help information
+  -h 		Display help information
 
 Options:
   -f 		Force the scans even when the host can not be pinged
