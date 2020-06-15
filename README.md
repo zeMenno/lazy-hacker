@@ -57,7 +57,7 @@ Usage:
   doc-exec [FLAGS]
 
 Flags: 
-  -c 		Command to execute
-  -d 		The directory where all the output will be
-  -h 		Display help information
+  -c    Command to execute
+  -d    The directory where all the output will be
+  -h    Display help information
 ```
