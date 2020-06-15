@@ -10,17 +10,21 @@
 ip_address=''
 directory_name=''
 force=false
-wordlist='/usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt'
+wordlist='/usr/share/wordlists/dirbuster/directory-list-2.3-small.txt'
+nmap_flags=''
+
 
 print_usage(){
-	echo 'usage: startscan -i <ip address> -d <directory_name> -w <wordlist> [-f]'
+	echo 'usage: startscan -i <ip address> -d <directory_name> -w <wordlist> [-f] [-A]'
 	echo ' -i 	The Ip Address of the target machine'
 	echo ' -d 	The directory where all the output will be'
 	echo ' -f 	Force the scans even when the host can not be pinged'
 	echo ' -w 	Add a custom wordlist for GoBuster'
+	echo ' -A 	Will ewxecute an aggressive scan'
 }
 
 exec_code(){
+
 	echo "[StartScan] Making directories/files"
 
 	mkdir $directory_name
@@ -35,8 +39,7 @@ exec_code(){
 	echo "[StartScan] Created a README.md in the directory: $directory_name"	
 
 	echo '[StartScan] Running NMAP'
-
-	sudo nmap -sS -sV -T4 -A $ip_address -oN $directory_name/nmap/init
+	sudo nmap $nmap_flags $ip_address -oN $directory_name/nmap/init
 
 	echo '[StartScan] Running GoBuster'
 
@@ -45,12 +48,13 @@ exec_code(){
 	sudo gobuster dir -u http://$ip_address -w $wordlist > $directory_name/gobuster/init
 }
 
-while getopts 'hi:d:fw:' flag; do
+while getopts 'hi:d:fw:A' flag; do
 	case "${flag}" in
 		f) force=true ;;
 		i) ip_address="${OPTARG}" ;;
 		d) directory_name="${OPTARG}" ;;
 		w) wordlist="${OPTARG}" ;;
+		A) nmap_flags='-sS -sV -T4 -A' ;; 
 		h) print_usage
 		   exit 1 ;;
 	esac
