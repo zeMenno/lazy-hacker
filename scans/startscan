@@ -61,12 +61,13 @@ if [[ $ip_address == '' || $directory_name == '' ]]; then
 	exit
 fi
 
-echo "[StartScan] Checking if host is up"
 
 if [[ $force ]]; 
 then
+	echo "[StartScan] Forcing the scans"
 	exec_code
 else
+	echo "[StartScan] Checking if host is up"
 	if ping -c 1 $ip_address &> /dev/null 
 	then
 		exec_code
