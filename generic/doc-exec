@@ -17,7 +17,9 @@ print_usage(){
 exec_code(){
 	echo "[Doc Exec] Creating directory called: $directoryname"
 	mkdir $directoryname
+	echo "[Doc Exec] Create output file for the command output"
 	touch $directoryname/output
+	echo "[Doc Exec] Executing command: '$command'"
 	sudo $command | tee $directoryname/output
 }
 
