@@ -2,6 +2,8 @@
 
 Lazy scans are scans for everybody who want  to do more with less commands. Here is an example of a script that will make your start of pentesting faster, easier and more consistent in use. 
 
+## Scans
+
 ### StartScan
 
 StartScan is an easy to use scan that will automate your start of a pentest. StartScan has a couple of features that will helkp you make your life a bit better. for example:
@@ -13,7 +15,7 @@ StartScan is an easy to use scan that will automate your start of a pentest. Sta
 
 I personaly use this script all the time because it saves me a lot of time! 
 
-## Help
+### Help
 ```
 $ startscan -h
 
@@ -30,4 +32,22 @@ Options:
   -f 		Force the scans even when the host can not be pinged
 
 This command uses Nmap and Gobuster, make sure you have both of those installed and ready to use :D
+```
+
+## Generic
+
+### doc-exec
+Doc-Exec is a command that will make a directory and output fil and lets you execute any command you want. It will also put the output of that command to the output file created 
+
+### Help
+```
+$ doc-exec -h
+
+Usage:
+  doc-exec [FLAGS]
+
+Flags: 
+  -c 		Command to execute
+  -d 		The directory where all the output will be
+  -h 		Display help information
 ```
