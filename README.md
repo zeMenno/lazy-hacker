@@ -12,3 +12,21 @@ StartScan is an easy to use scan that will automate your start of a pentest. Sta
 - StartScan will create a init file with the outputs of the scans so you want have to scan again.
 
 I personaly use this script all the time because it saves me a lot of time! 
+
+## Help
+```
+$ startscan -h
+
+Usage:
+	startscan [FLAGS] [OPTIONS]
+
+Flags: 
+	-i 		The Ip Address of the target machine'
+	-d 		The directory where all the output will be'
+	-w 		Add a custom wordlist for GoBuster'
+
+Options:
+	-f 		Force the scans even when the host can not be pinged'
+
+This command uses Nmap and Gobuster, make sure you have both of thos installed and ready to use :D
+```
