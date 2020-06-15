@@ -32,7 +32,7 @@ Flags:
   -t    Amount of threads GoBuster will use
   -r    All the response codes GoBuster will check (',' seperated)
   -l    Amount of levels dee GoBuster will scan
-     		(The higher this amount the longer the scan will take)
+     	(The higher this amount the longer the scan will take)
         Don't use `-R` if you want fast results 
 
 Options:
