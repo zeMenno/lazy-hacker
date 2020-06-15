@@ -1,6 +1,6 @@
-# Lazy scans
+# Lazy scripts
 
-Lazy scans are scans for everybody who want  to do more with less commands. Here is an example of a script that will make your start of pentesting faster, easier and more consistent in use. 
+Lazy scripts are scripts for everyone that want to do more with less commands. Here are some examples of a scripts that will make your pentesting faster, easier and more consistent in use. 
 
 ## Scans
 
@@ -37,7 +37,7 @@ This command uses Nmap and Gobuster, make sure you have both of those installed 
 ## Generic
 
 ### doc-exec
-Doc-Exec is a command that will make a directory and output fil and lets you execute any command you want. It will also put the output of that command to the output file created 
+Doc-Exec is a command that will make a directory and output file and lets you execute any command you want and have the rights for. It will also put the output of that command to the output file created 
 
 ### Help
 ```
