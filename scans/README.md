@@ -1,6 +1,6 @@
-# Lazy scans
+## Lazy scans
 
-1. StartScan
+# StartScan
 
 StartScan is an easy to use scan that will automate your start of a pentest. StartScan has a couple of features that will helkp you make your life a bit better. for example:
 - StartScan will initiate an NMap scan and a GoBuster scan on the given IP address
