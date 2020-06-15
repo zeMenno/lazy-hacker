@@ -18,15 +18,16 @@ I personaly use this script all the time because it saves me a lot of time!
 $ startscan -h
 
 Usage:
-	startscan [FLAGS] [OPTIONS]
+  startscan [FLAGS] [OPTIONS]
 
 Flags: 
-	-i 		The Ip Address of the target machine'
-	-d 		The directory where all the output will be'
-	-w 		Add a custom wordlist for GoBuster'
+  -i 		The Ip Address of the target machine
+  -d 		The directory where all the output will be
+  -w 		Add a custom wordlist for GoBuster
+  -h 		Display help information
 
 Options:
-	-f 		Force the scans even when the host can not be pinged'
+  -f 		Force the scans even when the host can not be pinged
 
-This command uses Nmap and Gobuster, make sure you have both of thos installed and ready to use :D
+This command uses Nmap and Gobuster, make sure you have both of those installed and ready to use :D
 ```
