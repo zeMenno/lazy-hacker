@@ -37,7 +37,7 @@ This command uses Nmap and Gobuster, make sure you have both of those installed 
 ## Generic
 
 ### doc-exec
-Doc-Exec is a command that will make a directory and output fil and lets you execute any command you want. It will also put the output of that command to the output file created 
+Doc-Exec is a command that will make a directory and output file and lets you execute any command you want and have the rights for. It will also put the output of that command to the output file created 
 
 ### Help
 ```
