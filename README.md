@@ -6,7 +6,7 @@ Lazy scans are scans for everybody who want  to do more with less commands. Here
 
 ### StartScan
 
-StartScan is an easy to use scan that will automate your start of a pentest. StartScan has a couple of features that will helkp you make your life a bit better. for example:
+StartScan is an easy to use scan that will automate your start of a pentest. StartScan has a couple of features that will help you make your life a bit better. for example:
 - StartScan will initiate an NMap scan and a GoBuster scan on the given IP address
 - GoBuster will use the given wordlist that you provide with the flag `-w`
 - If you can't ping the system (for example if you are trying to enter a windows machine) you can use `-f`
