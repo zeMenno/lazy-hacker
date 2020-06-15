@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# doc-exec will execute the given command and store the output in a file 
+
+# Author: Menno Fesevur, 2020
+# TryHackMe Name: zeMenno
+
+command=''
+directoryname=''
+
+print_usage(){
+	echo "usage: doc-exec -d <directory name> -c '<command>'"
+	echo ' -d 	The name of the directory that will be made'
+	echo ' -c 	The command that you wan to be executed, dont forget the quotes around it'
+}
+
+exec_code(){
+	echo "[Doc Exec] Creating directory called: $directoryname"
+	mkdir $directoryname
+	touch $directoryname/output
+	sudo $command | tee $directoryname/output
+}
+
+while getopts 'hc:d:' flag; do
+	case "${flag}" in
+		h) print_usage
+   	 	   exit 1 ;;
+   	 	c) command="${OPTARG}" ;;
+		d) directoryname="${OPTARG}" ;;
+	esac
+done
+
+if [[ $directoryname == '' || $command == '' ]]; then
+	echo 'Not all parameters are filled'
+	echo 'Try "doc-exec -h" for more info'
+	exit
+fi
+
+exec_code
