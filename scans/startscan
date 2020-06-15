@@ -13,7 +13,7 @@ force=false
 wordlist='/usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt'
 
 print_usage(){
-	echo 'usage: startscan -i <ip address> -d <directory_name> [-f]'
+	echo 'usage: startscan -i <ip address> -d <directory_name> -w <wordlist> [-f]'
 	echo ' -i 	The Ip Address of the target machine'
 	echo ' -d 	The directory where all the output will be'
 	echo ' -f 	Force the scans even when the host can not be pinged'
