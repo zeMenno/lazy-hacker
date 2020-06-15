@@ -33,12 +33,12 @@ Flags:
   -r    All the response codes GoBuster will check (',' seperated)
   -l    Amount of levels dee GoBuster will scan
      	(The higher this amount the longer the scan will take)
-        Don't use `-R` if you want fast results 
+        Don't use -R if you want fast results 
 
 Options:
   -F    Force the scans even when the host can not be pinged
   -R    Recursively execute GoBuster (may tak a long time)
-  -A 		Will execute an aggressive nmap scan
+  -A    Will execute an aggressive nmap scan
 
 This command uses Nmap and Gobuster, make sure you have both of those installed and ready to use :D
 ```
