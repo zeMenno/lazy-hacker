@@ -70,6 +70,10 @@ else
 	echo "[StartScan] Checking if host is up"
 	if ping -c 1 $ip_address &> /dev/null 
 	then
+		if [ ! -e $wordlist ]; then
+			echo 'ERROR: Wordlist does not exist'
+			exit
+		fi
 		exec_code
 	else
 		echo 'ERROR: Host is not up, do you have the right ip address?'
